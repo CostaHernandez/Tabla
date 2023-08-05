@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./index2.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+      <h1>Elige un Tema</h1>
+    <div class="theme-switcher">
+      <button data-theme="green" aria-pressed="true">Green</button>
+      <button data-theme="blue" aria-pressed="false">Blue</button>
+      <button data-theme="pink" aria-pressed="false">Pink</button>
+      <button data-theme="orange" aria-pressed="false">Orange</button>
+    </div>
+    </div>
+<br>
+    <table>
+        <tr>
+            <td>
+                <!--HTML form for crud-->
+                <form autocomplete="off" onsubmit="onFormSubmit()">
+                    <div>
+                        <label for="hotel">Nombre Completo</label>
+                        <input type="text" name="nombreCompleto" id="nombreCompleto" >
+                    </div>
+                    <div>
+                        <label for="ubicacion">Cedula</label>
+                        <input type="text" name="cedula" id="cedula" >
+                    </div>
+                    <div>
+                        <label for="categoria">Celular</label>
+                        <input type="text" name="celular" id="celular"> 
+                    </div>
+                    <div>
+                        <label for="habitacion">Dirección</label>
+                        <input type="text" name="direccion" id="direccion">
+                    </div>
+                    <div>
+                        <label for="habitacion">Fecha Nacimiento</label>
+                        <input type="text" name="fechaNac" id="fechaNac">
+                    </div>
+                    <div>
+                        <label for="habitacion">Correo Electrónico</label>
+                        <input type="text" name="email" id="email">
+                    </div>
+                    <div class="form_action--button">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form> 
+            </td>
+            <td>
+                <table class="list" id="personaRegistro">
+                    <thead>
+                        <tr>
+                            <th>Nombre Completo</th>
+                            <th>Cédula</th>  
+                            <th>Celular</th>
+                            <th>Dirección</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <script src="./index.js"></script>
+    <script src="./index2.js"></script>
+  </body>
+</html>
