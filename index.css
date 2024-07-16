@@ -34,40 +34,39 @@
     
   }
   
-  body {
-    background-color: var(--color-background);
-    background: radial-gradient(var(--color-background), var(--color-accent));
-    background-size: 200%;
-    color: var(--color-text);
-    font-family: sans-serif;
-    display: center;
-    align-items: center;
-    justify-content: center;
-    
-  }
+ body {
+  background: radial-gradient(var(--color-background), var(--color-accent));
+  color: var(--color-text);
+  font-family: sans-serif;
+  display: flex; /* Cambiado a flex para centrar contenido */
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Añadido para centrar contenido verticalmente */
+  margin: 0; /* Añadido para quitar el margen predeterminado del body */
+}
   
   ::selection {
     background-color: var(--color-accent);
   }
   
   .container {
-    display: block;
-    background-color: rgba(255, 255, 255, 0.35);
-    padding: 1rem 1rem;
-    border: 2px solid var(--color-text);
-    box-shadow: 7px 6px 0 0 var(--color-text);
-    border-radius: var(--border-radius);
-    max-width: 90vw;
-    transition: transform 0.35s;
-  }
-  
-  .container:has(button[data-theme]:active) {
-    transform: rotateZ(0.35deg);
-  } 
-  
-  .container:has(button[data-theme]:nth-of-type(2n):active) {
-    transform: rotateZ(-0.35deg);
-  }
+  background-color: rgba(255, 255, 255, 0.35);
+  padding: 1rem;
+  border: 2px solid var(--color-text);
+  box-shadow: 7px 6px 0 0 var(--color-text);
+  border-radius: var(--border-radius);
+  max-width: 90vw;
+  transition: transform 0.35s;
+  margin: auto; /* Añadido para centrar horizontalmente */
+}
+
+.container:has(button[data-theme]:active) {
+  transform: rotateZ(0.35deg);
+}
+
+.container:has(button[data-theme]:nth-of-type(2n):active) {
+  transform: rotateZ(-0.35deg);
+}
   
   h1 {
     text-align: center;
@@ -133,27 +132,25 @@
     box-shadow: 0 0 0 2px var(--color-background) inset;
   }
   
-  @media screen and (max-width: 500px) {
-    .container {
-      padding: 1rem;
-    }
-    
-    .theme-switcher {
-      display: block;
-    }
-    
-    button[data-theme] {
-      display: block;
-      margin: 0 auto;
-      border-radius: var(--border-radius);
-    }
-    
-    button[data-theme]:is(:first-of-type, :last-of-type) {
-      border-radius: var(--border-radius);
-    }
-    
-    button[data-theme] + button[data-theme] {
-      border-left: 2px solid var(--color-text);
-      margin-top: 1rem;
-    }
+ @media screen and (max-width: 500px) {
+  .container {
+    padding: 1rem;
   }
+
+  .theme-switcher {
+    display: block;
+    text-align: center; /* Añadido para centrar botones en pantalla pequeña */
+  }
+
+  button[data-theme] {
+    display: block;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    width: 100%; /* Añadido para ocupar todo el ancho disponible */
+  }
+
+  button[data-theme] + button[data-theme] {
+    border-left: none;
+    margin-top: 1rem;
+  }
+}
